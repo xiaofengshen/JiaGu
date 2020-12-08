@@ -1,0 +1,3 @@
+include ':jiagu'
+include ':app'
+rootProject.name = "360Plugin"
