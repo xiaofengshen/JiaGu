@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'kotlin'
     id 'maven-publish'
+    id 'com.novoda.bintray-release'
 }
 
 java {
@@ -25,5 +26,15 @@ publishing{
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation gradleApi()
-    implementation "com.android.tools.build:gradle:4.0.1"
+    implementation "com.android.tools.build:gradle:3.6.1"
+}
+
+publish {
+    repoName = 'JiaGu'//远程仓库名字,不指明，默认是上传到maven
+    userOrg = 'awsyc123'//bintray.com用户名
+    groupId = 'com.yc'//jcenter上的路径,bintray上创建Package时填写的Version control项
+    artifactId = 'jiaGu'//项目名称，bintray上创建Package时填写的Name项
+    publishVersion = '1.0.0'//版本号
+    desc = '基本工具类'//描述，不重要
+    website = 'https://github.com/xiaofengshen/JiaGu.git'//网站，最好有，不重要
 }
